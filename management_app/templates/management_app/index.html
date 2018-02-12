@@ -1,1 +1,11 @@
-<h1>Hello</h1>
+{% if latest_school_list %}
+<ul>
+    {% for school in latest_school_list %}
+    <li><a href="{% url 'management_app:detail' school.id %}">{{ school.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No school are available.</p>
+{% endif %}
+
+
